@@ -1,0 +1,465 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	overflow-x: hidden
+.img_responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+h1
+	font: 38px "Montserrat"
+	color: #1d1d1d
+
+h2
+	font: 30px "Montserrat"
+	color: #141414
+
+p
+	font: 16pt "NunitoSans"
+	color: #787878
+
+.px12
+	font: 12pt "Montserrat"
+	color: #191919
+	text-transform: uppercase
+
+a:visited, a:focus
+	text-decoration: none
+
+a.active
+	color: $cyan
+
+section.padding
+	padding: 100px 0
+
+.s_grey
+	background-color: $grey
+.s_white
+	background-color: #fff
+
+.button
+	display: inline-block
+	background-color: $cyan
+	color: #fff
+	border: 3px solid $cyan
+	padding: 19px 32px
+	font: 12pt "Montserrat"
+	text-transform: uppercase
+	margin: 0 auto
+	+tran(.2s)
+	&:hover
+		color: #191919
+		background-color: #fff
+		text-decoration: none
+		border-radius: 5px
+	&:active
+		transform: translateY(3px)
+	&:focus
+		color: #fff
+		&:hover
+			color: #000
+
+.button_top
+	width: 60px
+	height: 60px
+	position: fixed
+	right: 50px
+	bottom: 50px
+	background-color: $cyan
+	border: 3px solid $cyan
+	color: #fff
+	font-size: 40px
+	text-align: center
+	line-height: 50px
+	z-index: 10
+	+tran(.4s);
+	&:hover
+		background-color: #fff
+		color: $cyan
+	&:focus
+		color: #fff
+	&:focus:hover
+		color: $cyan
+
+.clear
+	clear: both
+
+//TOGGLE MENU
+.hidden_menu
+	display: none
+
+.toggle_menu 
+	display: block
+	width: 28px
+	height: 28px
+	margin-top: 14px
+
+	span:after, span:before 
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+
+	span:after
+		top: 18px
+
+	span 
+		position: relative
+		display: block
+
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		/* COLOR */
+		background-color: #191919
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+
+
+	&.on span 
+		background-color: transparent
+
+	&.on span:before 
+		transform: rotate(45deg) translate(-1px, 0px)
+
+	&.on span:after 
+		transform: rotate(-45deg) translate(6px, -7px)
+//TOGGLE MENU END
+
+// Header
+
+.header
+	min-height: 100vh
+	max-height: 800px
+	background: url(../img/header_bg.jpg) no-repeat center
+	.container
+		height: 100%
+	.top_line
+		position: relative
+		margin-top: 40px
+		display: flex
+		justify-content: space-between
+		.menu
+			ul
+				li
+					display: inline-block
+					margin-left: 30px
+					a
+						text-decoration: none
+						+tran(.3s)
+						&:hover, &:focus
+							color: $cyan
+		.hidden_menu
+			position: absolute
+			top: 45px
+			right: 0
+			background-color: #fff
+			border: 3px solid #191919
+			z-index: 2
+			ul
+				li
+					list-style: none
+					text-align: center
+					margin: 5px 20px
+					a
+						+tran(.3s)
+						&:hover
+							color: $cyan
+	.header_baner_wrap
+		width: 100%
+		min-height: 100vh
+		max-height: 800px
+		display: flex
+		align-items: center
+		.header_baner
+			p
+				font-size: 18pt
+				padding: 40px 0
+				color: #fff
+
+.about_us
+	text-align: center
+	p
+		max-width: 700px
+		margin: 40px auto
+
+.prof_skills
+	height: 570px
+	background-color: #f8f9f9
+	.container
+		height: 100%
+		.row
+			height: 100%
+			display: flex
+			align-items: center
+	.skills
+		.item
+			padding: 20px 0
+			h3
+				span
+					margin-left: 15px
+			.line
+				position: relative
+				margin-top: 10px
+				height: 3px
+				background-color: #d8d8d8
+				&:before, &:after
+					content: ""
+					position: absolute
+					height: 100%
+					background-color: $cyan
+			&:nth-of-type(1)
+				.line:before
+					width: 75%
+			&:nth-of-type(2)
+				.line:before
+					width: 90%
+			&:nth-of-type(3)
+				.line:before
+					width: 65%
+	.prof_img
+		height: 400px
+		background: $grey url(../img/webdes.jpg) no-repeat center
+		background-size: cover
+
+.tizer
+	background-color: $cyan
+	.item
+		display: flex
+		align-items: center
+		+tran(.3s)
+		&:hover
+			transform: scale(1.1)
+		.icon
+			color: #fff
+			font-size: 40px
+			margin-right: 20px
+			float: left
+		p
+			font-family: "Montserrat"
+			font-size: 11pt
+			text-transform: uppercase
+			color: #fff
+			&.number
+				font-size: 17pt
+				margin-bottom: 5px
+
+.gallery
+	.gallery_button
+		display: block
+		text-align: center
+		line-height: 100px
+		background-color: #f5f5f5
+		font-size: 12pt
+		font-family: "Montserrat"
+		color: #8e8e8e
+		text-transform: uppercase
+		text-decoration: none
+		+tran(.4s)
+		&:hover
+			font-size: 110%
+	.item
+		height: 300px
+		padding: 0
+		cursor: pointer
+		position: relative
+		&:hover
+			img
+				transform: scale(1.1)
+			.inside
+				opacity: 1
+		img
+			width: 100%
+			+tran(1s)
+		.inside
+			opacity: 0
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(0, 0, 0, .5)
+			z-index: 3
+			text-align: center
+			line-height: 300px
+			color: #fff
+			font-size: 48px
+			+tran(.5s)
+
+.work_process
+	background-color: #fff
+	h2, p
+		text-align: center
+	p
+		padding: 40px 0
+	img
+		width: 100%
+	.video_wrap
+		position: relative
+		.inside
+			position: absolute;
+			border: 3px solid $cyan
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+
+.services
+	background-color: $grey
+	.item
+		text-align: center
+		padding: 40px 0
+		i
+			font-size: 48pt
+		h3
+			text-transform: uppercase
+			margin-top: 30px
+			margin-bottom: 20px
+
+.testimonials
+	background-color: $cyan
+	text-align: center
+	p, span
+		font-family: "Montserrat"
+		font-size: 24px
+		color: #fff
+	p
+		margin-bottom: 30px
+	.item span
+		text-transform: uppercase
+		font-size: 12px
+	.carousel_wrap
+		display: flex
+		align-items: center
+		min-height: 500px
+		padding: 100px 0
+		position: relative
+		.owl-carousel
+			display: flex
+			align-items: center
+			p
+				float: none
+
+.clients
+	padding: 60px 0
+	background-color: #fff
+	.item
+		height: 72px
+		width: 100%
+	.item1 
+		background: url(../img/client1.png) no-repeat center
+	.item2 
+		background: url(../img/client2.png) no-repeat center
+	.item3 
+		background: url(../img/client3.png) no-repeat center
+	.item4 
+		background: url(../img/client4.png) no-repeat center
+
+.need_a_project
+	background-color: #f5f5f5
+	text-align: center
+	h2
+		margin-bottom: 40px
+	form
+		margin-top: 40px
+		width: 670px
+		input
+			width: 100%
+			height: 48px
+			background-color: #fff
+			border: none
+			padding: 0 15px
+			margin-bottom: 30px
+			&.inp_name, &.inp_email
+				width: 320px
+			&.inp_name
+				float: left
+			&.inp_email
+				float: right
+		textarea
+			width: 100%
+			height: 170px
+			resize: none
+			border: none
+			margin-bottom: 30px
+			padding: 10px 15px
+		input, textarea
+			font-family: "NunitoSans"
+			font-size: 17px
+			color: #787878
+			&:focus
+				outline: 3px solid $cyan
+
+.footer
+	background-color: $footer
+	color: #bcbcbc
+	hr
+		color: #fff
+	h3
+		font-family: "Montserrat"
+		font-size: 20px
+		color: #fff
+	p, a
+		font-family: "NunitoSans"
+		font-size: 17px
+		color: #bcbcbc
+	.footer_email
+		text-align: center
+	.footer_menus
+		display: flex
+		justify-content: center
+		ul
+			margin-right: 50px
+			&:nth-of-type(2)
+				margin-right: 100px
+			li
+				list-style: none
+	.qwerty
+		height: 40px
+					
+
+
+
+
+
+
+
+@import "media" // Всегда в конце
