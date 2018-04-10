@@ -1,0 +1,66 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+
+//First screen styles
+
+*
+	margin: 0
+	padding: 0
+
+.header
+	background-image: url(../img/header_bg.jpg)
+	.top_line_wrap
+		border-bottom: 1px solid #626262
+		.top_line
+			display: flex
+			align-items: center
+			justify-content: space-between
+			height: 125px
+			.top_menu
+				ul
+					li
+						display: inline-block
+						border-bottom: 6px solid transparent
+						+tran(.3s)
+						&.active, &:hover
+							border-color: $blue
+						a
+							line-height: 120px
+							font-family: "MyriadPro"
+							font-size: 20px
+							color: #fff
+							margin: 20px
+							text-decoration: none
+			.top_links
+				ul
+					li
+						display: inline-block
+						a
+							margin-left: 23px
+							color: $light
+							font-size: 20px
+	.header_content
+		height: auto
+		text-align: center
+		p
+			font-size: 24px
+			color: $blue
+			font-family: "GothamMedium"
+			text-transform: uppercase
+			text-align: center
+			letter-spacing: 20px
+		.scrolldown_button
+			display: block
+			margin: 110px 0
+			color: #fff
+			text-decoration: none
+			+tran(.4s)
+			&:hover
+					color: $blue
+			span
+				font-size: 13px
+				font-family: "OpenSansRegular"
+			i
+				font-size: 75px
+
